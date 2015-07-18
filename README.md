@@ -1,6 +1,11 @@
 # run-async-gen
 Utility function for running asynchronous JavaScript generators
 
+## Install
+```bash
+npm install run-async-gen --save
+```
+
 ## API
 
 ### ``runAsyncGen(iter, cb)``
@@ -11,11 +16,6 @@ Utility function for running asynchronous JavaScript generators
 Asynchronous [generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) should yield asynchronous function with one callback parameter ``asyncFunc(cb)``, this convention follows most of Node.js API. If your ``asyncFunc`` requires more than one parameter, you can bind this parameters using [lodash](https://github.com/lodash/lodash) utility functions, such as [``bind``](https://lodash.com/docs#bind), [``partial``](https://lodash.com/docs#partial) and [``partialRight``](https://lodash.com/docs#partialRight).  The provided callback ``cb(err, result)`` should be called with one of two arguments ``err`` or ``result``. If ``err`` is not ``null`` or ``undefined`` ``yield`` statement will throw exception with this value, it can be handled using standatrd ``try-catch`` statements. If no ``error``, ``yield`` statement will return ``result``.
 
 To run a number of asynchronous functions in parallel, you can pass to ``yield`` statement an array of asynchronous functions ``[asyncFn1, asyncFun2]``, then yield will return their results as an array in same order ``['result1', 'result2']``.
-
-## Install
-```bash
-npm install run-async-gen --save
-```
 
 ## Example
 ```js
