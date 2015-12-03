@@ -1,6 +1,6 @@
 {
   "name": "run-async-gen",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Utility function for running asynchronous JavaScript generators",
   "main": "index.js",
   "scripts": {
